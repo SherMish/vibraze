@@ -127,7 +127,7 @@ export default function VideoProcessor() {
       // Read output file
       setProcessing((prev) => ({ ...prev, stage: "Finalizing..." }));
       const data = (await ffmpeg.readFile("output.mp4")) as Uint8Array;
-      const blob = new Blob([data], { type: "video/mp4" });
+      const blob = new Blob([new Uint8Array(data)], { type: "video/mp4" });
       const url = URL.createObjectURL(blob);
 
       setProcessedVideoUrl(url);

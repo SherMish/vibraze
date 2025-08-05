@@ -10,13 +10,18 @@ export const metadata: Metadata = {
     "Upload videos and enhance their audio with professional sound boosting technology. Process videos directly in your browser with privacy-first approach.",
   keywords: "video, audio, boost, enhancement, ffmpeg, browser, privacy",
   authors: [{ name: "Vibraze Team" }],
-  viewport: "width=device-width, initial-scale=1",
-  themeColor: "#0ea5e9",
+  metadataBase: new URL("https://vibraze.app"),
   openGraph: {
     title: "Vibraze - Boost Your Video Audio",
     description: "Professional video audio enhancement in your browser",
     type: "website",
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0ea5e9",
 };
 
 export default function RootLayout({
