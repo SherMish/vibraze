@@ -200,13 +200,32 @@ export default function VideoProcessor() {
               >
                 <Upload className="w-16 h-16 text-primary-500 mx-auto mb-4 animate-float" />
                 <h3 className="text-xl font-semibold mb-2">
-                  Upload Your Video
+                  🎬 Upload Your Video - It's FREE!
                 </h3>
-                <p className="text-gray-400 mb-4">
-                  Select a video file to boost its audio
+                <p className="text-gray-300 mb-3 text-lg">
+                  📈{" "}
+                  <span className="text-green-400 font-semibold">
+                    Boost engagement
+                  </span>{" "}
+                  with louder, clearer audio
                 </p>
+                <div className="grid grid-cols-2 gap-2 mb-4 text-sm">
+                  <div className="text-center p-2 bg-pink-500/10 rounded-lg border border-pink-500/20">
+                    <span className="text-pink-400">📱 Instagram</span>
+                    <p className="text-xs text-gray-400">
+                      Algorithm loves clear audio
+                    </p>
+                  </div>
+                  <div className="text-center p-2 bg-blue-500/10 rounded-lg border border-blue-500/20">
+                    <span className="text-blue-400">🎵 TikTok</span>
+                    <p className="text-xs text-gray-400">
+                      Higher audio = More views
+                    </p>
+                  </div>
+                </div>
                 <p className="text-sm text-gray-500">
-                  Supports MP4, MOV, AVI and other common formats
+                  ✅ Supports MP4, MOV, AVI • No file size limits • Instant
+                  processing
                 </p>
               </motion.div>
               <input
@@ -238,11 +257,53 @@ export default function VideoProcessor() {
               </p>
             </div>
 
+            {/* Benefits Section */}
+            <div className="glass-effect p-6 rounded-lg mb-6">
+              <h4 className="text-lg font-semibold text-center mb-4 gradient-text">
+                🚀 Why Boost Your Audio?
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                <div className="text-center p-3 bg-green-500/10 rounded-lg border border-green-500/20">
+                  <div className="text-green-400 font-semibold mb-1">
+                    📈 Algorithm Boost
+                  </div>
+                  <p className="text-gray-300">
+                    Louder audio = Higher engagement rates
+                  </p>
+                </div>
+                <div className="text-center p-3 bg-blue-500/10 rounded-lg border border-blue-500/20">
+                  <div className="text-blue-400 font-semibold mb-1">
+                    👂 Better Retention
+                  </div>
+                  <p className="text-gray-300">
+                    Clear audio keeps viewers watching longer
+                  </p>
+                </div>
+                <div className="text-center p-3 bg-purple-500/10 rounded-lg border border-purple-500/20">
+                  <div className="text-purple-400 font-semibold mb-1">
+                    🎯 More Reach
+                  </div>
+                  <p className="text-gray-300">
+                    Platforms favor content with quality audio
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* Audio Boost Control */}
             <div className="glass-effect p-6 rounded-lg">
               <label className="block text-sm font-medium mb-4">
-                Audio Boost:{" "}
-                <span className="text-primary-400">{audioBoost}dB</span>
+                🎚️ Audio Boost Level:{" "}
+                <span className="text-primary-400 font-bold">
+                  {audioBoost}dB
+                </span>
+                <span className="text-gray-400 text-xs ml-2">
+                  {audioBoost === 0 && "Original"}
+                  {audioBoost > 0 && audioBoost <= 5 && "Subtle"}
+                  {audioBoost > 5 && audioBoost <= 10 && "Recommended"}
+                  {audioBoost > 10 && audioBoost <= 15 && "Strong"}
+                  {audioBoost > 15 && "Maximum"}
+                </span>
               </label>
               <input
                 type="range"
@@ -251,12 +312,15 @@ export default function VideoProcessor() {
                 step="1"
                 value={audioBoost}
                 onChange={(e) => setAudioBoost(Number(e.target.value))}
-                className="w-full h-2 bg-dark-700 rounded-lg appearance-none cursor-pointer slider"
+                className="w-full h-3 bg-dark-700 rounded-lg appearance-none cursor-pointer slider"
                 disabled={processing.isLoading}
               />
-              <div className="flex justify-between text-xs text-gray-500 mt-1">
-                <span>0dB</span>
-                <span>20dB</span>
+              <div className="flex justify-between text-xs text-gray-500 mt-2">
+                <span>0dB (Original)</span>
+                <span className="text-center">
+                  <span className="text-primary-400">6dB Recommended</span>
+                </span>
+                <span>20dB (Max)</span>
               </div>
             </div>
 
@@ -271,7 +335,9 @@ export default function VideoProcessor() {
               >
                 <Volume2 className="w-5 h-5" />
                 <span>
-                  {processing.isLoading ? "Processing..." : "Boost Audio"}
+                  {processing.isLoading
+                    ? "🎯 Boosting Audio..."
+                    : "🚀 Boost Audio FREE"}
                 </span>
               </motion.button>
 
@@ -322,9 +388,17 @@ export default function VideoProcessor() {
                 animate={{ opacity: 1, y: 0 }}
                 className="glass-effect p-6 rounded-lg"
               >
-                <h4 className="font-semibold text-primary-400 mb-4">
-                  Enhanced Video Ready!
+                <h4 className="font-semibold text-green-400 mb-4 text-center text-xl">
+                  🎉 Your Video is Now SUPERCHARGED!
                 </h4>
+                <div className="text-center mb-4 p-3 bg-green-500/10 rounded-lg border border-green-500/20">
+                  <p className="text-green-300 font-semibold">
+                    ✅ Audio boosted by {audioBoost}dB
+                  </p>
+                  <p className="text-gray-400 text-sm">
+                    Ready for Instagram, TikTok & YouTube!
+                  </p>
+                </div>
 
                 {/* Video Player */}
                 <div className="relative rounded-lg overflow-hidden mb-4">
@@ -346,7 +420,7 @@ export default function VideoProcessor() {
                   className="flex items-center space-x-2 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 mx-auto animate-glow"
                 >
                   <Download className="w-5 h-5" />
-                  <span>Download Enhanced Video</span>
+                  <span>💾 Download Your Viral-Ready Video</span>
                 </motion.button>
               </motion.div>
             )}

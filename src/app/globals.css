@@ -78,4 +78,53 @@
 
 .animate-pulse-glow {
   animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Gradient border animation */
+@keyframes gradient-border {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-border {
+  background: linear-gradient(45deg, #0ea5e9, #06b6d4, #8b5cf6, #0ea5e9);
+  background-size: 400% 400%;
+  animation: gradient-border 3s ease infinite;
+}
+
+/* Floating elements for background */
+@keyframes float-random {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  33% { 
+    transform: translateY(-20px) translateX(10px) rotate(120deg);
+  }
+  66% { 
+    transform: translateY(10px) translateX(-15px) rotate(240deg);
+  }
+}
+
+.animate-float-random {
+  animation: float-random 8s ease-in-out infinite;
+}
+
+/* Shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.2), transparent);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
 } 

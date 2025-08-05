@@ -5,15 +5,18 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Vibraze - Boost Your Video Audio",
+  title:
+    "Vibraze - Free Video Audio Booster | Boost Audio for Instagram & TikTok",
   description:
-    "Upload videos and enhance their audio with professional sound boosting technology. Process videos directly in your browser with privacy-first approach.",
-  keywords: "video, audio, boost, enhancement, ffmpeg, browser, privacy",
+    "FREE & EASY video audio enhancer! Boost your video sound in seconds for better Instagram, TikTok & YouTube performance. No signup required - process videos instantly in your browser with professional audio enhancement.",
+  keywords:
+    "free video audio booster, instagram audio boost, tiktok sound enhancement, youtube video audio, social media audio, video sound booster, free audio enhancer, viral video audio, engagement boost, algorithm optimization",
   authors: [{ name: "Vibraze Team" }],
   metadataBase: new URL("https://vibraze.app"),
   openGraph: {
-    title: "Vibraze - Boost Your Video Audio",
-    description: "Professional video audio enhancement in your browser",
+    title: "Vibraze - FREE Video Audio Booster for Social Media",
+    description:
+      "Boost your video audio for FREE! Perfect for Instagram, TikTok & YouTube. Increase engagement and algorithm performance with louder, clearer audio.",
     type: "website",
   },
 };
